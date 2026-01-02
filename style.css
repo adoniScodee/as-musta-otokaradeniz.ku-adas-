@@ -1,136 +1,129 @@
-/* =========================
-   GLOBAL
-========================= */
-body {
+/* -------- GLOBAL RESET & FONT -------- */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Segoe UI', 'Inter', sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #eaeaea;
-  animation: backgroundFade 18s ease-in-out infinite alternate;
+  background: linear-gradient(135deg, #0a0f17, #1a2330);
+  color: #e7e7e7;
+  animation: pulseBG 20s ease-in-out infinite alternate;
 }
 
-@keyframes backgroundFade {
-  0% {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  }
-  100% {
-    background: linear-gradient(135deg, #141e30, #243b55);
-  }
+/* -------- BACKGROUND FADE -------- */
+@keyframes pulseBG {
+  0% { background: linear-gradient(135deg, #0a0f17, #1a2330); }
+  100% { background: linear-gradient(135deg, #0f1a2a, #1f3145); }
 }
 
-/* =========================
-   HEADER
-========================= */
+/* -------- HEADER & HERO -------- */
 header {
   text-align: center;
-  padding: 60px 20px 30px;
-  background: rgba(0, 0, 0, 0.55);
+  padding: 60px 20px;
   backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: rgba(0,0,0,0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
 header h1 {
-  font-size: 2.9rem;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-  color: #9fffd6;
-  text-shadow: 0 0 12px rgba(159,255,214,0.25);
+  font-size: 3rem;
+  color: #57d9a3;
+  text-shadow: 0px 0px 10px rgba(87,217,163,0.35);
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* -------- NAVBAR -------- */
 nav {
-  background: rgba(15, 15, 15, 0.9);
+  background: rgba(12,12,12,0.85);
   padding: 14px 0;
   text-align: center;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin: 0 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
 }
 
 nav a {
-  color: #9fffd6;
-  text-decoration: none;
+  color: #57d9a3;
   font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  margin: 0 18px;
+  text-decoration: none;
   position: relative;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #76e0b8;
 }
 
 nav a::after {
   content: "";
   position: absolute;
   width: 0;
-  height: 2px;
-  bottom: -6px;
+  height: 3px;
+  background: #57d9a3;
+  bottom: -4px;
   left: 0;
-  background: linear-gradient(90deg, #9fffd6, #38ef7d);
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 nav a:hover::after {
   width: 100%;
 }
 
-nav a:hover {
-  color: #38ef7d;
-}
-
-/* =========================
-   CONTENT
-========================= */
+/* -------- MAIN SECTION -------- */
 section {
-  padding: 45px 25px;
-  max-width: 900px;
-  margin: 30px auto;
-  background: rgba(0, 0, 0, 0.45);
-  border-radius: 16px;
+  margin-top: 30px;
+  padding: 50px 25px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(0,0,0,0.45);
+  border-radius: 12px;
   backdrop-filter: blur(8px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
   line-height: 1.7;
 }
 
-/* =========================
-   WHATSAPP BUTTON
-========================= */
-.whatsapp-button {
+/* -------- BUTTONS -------- */
+.btn-primary {
   display: inline-block;
-  padding: 14px 26px;
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
+  background: linear-gradient(135deg, #57d9a3, #38c28f);
   color: #fff;
-  text-decoration: none;
-  border-radius: 40px;
+  padding: 14px 26px;
+  border-radius: 30px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  transition: all 0.35s ease;
-  box-shadow: 0 10px 25px rgba(37,211,102,0.35);
+  text-decoration: none;
+  transition: 0.35s;
+  box-shadow: 0 8px 20px rgba(56,194,143,0.4);
 }
 
-.whatsapp-button:hover {
-  transform: translateY(-3px) scale(1.02);
-  background: linear-gradient(135deg, #1ebe5d, #128C7E);
-  box-shadow: 0 15px 35px rgba(18,140,126,0.45);
+.btn-primary:hover {
+  background: linear-gradient(135deg, #38c28f, #21a774);
+  transform: scale(1.03) translateY(-2px);
+  box-shadow: 0 12px 28px rgba(33,167,116,0.5);
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* -------- SERVICE CARD -------- */
+.service-card {
+  background: rgba(14,14,14,0.7);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  border-left: 4px solid #57d9a3;
+  transition: 0.25s ease;
+}
+
+.service-card:hover {
+  background: rgba(14,14,14,0.85);
+  border-left-color: #38c28f;
+}
+
+/* -------- FOOTER -------- */
 footer {
   text-align: center;
   padding: 22px;
-  background: rgba(10,10,10,0.95);
+  background: #0c0c0c;
   color: #bdbdbd;
   margin-top: 60px;
   font-size: 0.9rem;
-  border-top: 1px solid rgba(255,255,255,0.05);
 }
